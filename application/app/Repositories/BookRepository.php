@@ -42,4 +42,25 @@ class BookRepository
         return null;
     }
 
+    /**
+     * @param array $params
+     * @return void
+     * @throws \Exception
+     */
+    public function setReferenceBook(array $params)
+    {
+        if (!isset($params['id'], $params['title'])) {
+            throw new \Exception;
+        }
+        $this->books[] = $params;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getText()
+    {
+        return 'Laravel5';
+    }
+
 }

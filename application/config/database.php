@@ -51,7 +51,14 @@ return [
             'database' => storage_path('database.sqlite'),
             'prefix'   => '',
         ],
-
+        'testing' => [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+            'options' => [
+                PDO::ATTR_PERSISTENT => true,
+            ]
+        ],
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),

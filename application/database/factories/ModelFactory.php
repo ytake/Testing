@@ -19,3 +19,21 @@ $factory->define('App\User', function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->defineAs('App\User', 'guest', function ($faker) {
+    return [
+        'name' => 'guest',
+        'email' => null,
+        'password' => str_random(10),
+        'remember_token' => str_random(10),
+    ];
+});
+
+
+$factory->define('App\Entry', function ($faker) {
+    $faker = Faker\Factory::create('ja_JP');
+    return [
+        'title' => $faker->word,
+        'content' => $faker->text,
+    ];
+});

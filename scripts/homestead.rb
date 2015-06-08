@@ -139,7 +139,7 @@ class Homestead
       end
     end
 
-    # Update Composer On Every Provision
+    # change timezone(JP)
     config.vm.provision "shell" do |s|
       s.inline = "sudo ln -sf /usr/share/zoneinfo/Japan /etc/localtime"
     end
