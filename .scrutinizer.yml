@@ -20,10 +20,11 @@ checks:
     duplication: true
 build:
   environment:
+    node: false
     php:
       version: 5.6.9
-        ini:
-          'date.timezone': 'Asia/Tokyo'
+      ini:
+        'date.timezone': 'Asia/Tokyo'
   tests:
     override:
       -
