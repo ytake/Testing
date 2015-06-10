@@ -1,28 +1,27 @@
 <?php
 namespace App\Services;
 
-use App\Repositories\UserRepositoryInterface;
+use App\User;
 
 /**
  * Class UserService
  * @package App\Services
  */
-class UserService
+class UserServiceTwo
 {
-
-    /** @var UserRepositoryInterface  */
+    /** @var User */
     protected $user;
 
     /**
-     * @param UserRepositoryInterface $user
+     * @param User $user
      */
-    public function __construct(UserRepositoryInterface $user)
+    public function __construct(User $user)
     {
         $this->user = $user;
     }
 
     /**
-     * @return array
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getUsers()
     {

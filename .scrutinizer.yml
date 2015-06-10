@@ -1,0 +1,36 @@
+filter:
+  paths:
+    - application/
+  excluded_paths:
+    - application/tests/*
+    - application/spec/*
+    - src/*
+    - scripts/*
+    - .homestead/*
+tools:
+  external_code_coverage: false
+  php_code_sniffer:
+    config:
+      standard: "PSR2"
+  php_cs_fixer:
+    config: { level: psr2 }
+checks:
+  php:
+    code_rating: true
+    duplication: true
+build:
+  environment:
+    php:
+      version: 5.6.9
+        ini:
+          'date.timezone': 'Asia/Tokyo'
+  tests:
+    override:
+      -
+        commands:
+          - cd application
+          - composer install --prefer-source
+          - phpunit --coverage-clover=build/logs/clover.xml
+        coverage:
+          file: build/logs/clover.xml
+          format: php-clover

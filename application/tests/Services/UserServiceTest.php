@@ -2,27 +2,34 @@
 
 use App\Services\UserService;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class UserServiceTest extends \TestCase
 {
-
-    use DatabaseMigrations;
-
     /** @var UserService  */
     protected $service;
-
     public function setUp()
     {
         parent::setUp();
-        $this->service = new UserService;
+        $this->service = new UserService(new \StubUserRepository());
     }
 
-    public function testDatabaseDependencyUsers()
+    public function testGetUserRepository()
     {
-        $this->runDatabaseMigrations();
-        factory('App\User')->create();
         $this->assertInstanceOf(Collection::class, $this->service->getUsers());
-        // その他のテストコード
     }
+}
+
+class StubUserRepository implements \App\Repositories\UserRepositoryInterface
+{
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        $user = factory('App\User')->make();
+        return (new \Illuminate\Database\Eloquent\Collection())
+            ->add($user);
+    }
+
 }

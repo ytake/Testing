@@ -7,6 +7,7 @@ class EntryDummyTest extends \TestCase
     public function testDummy()
     {
         $this->runDatabaseMigrations();
-        $entry = factory('App\Entry', 5)->create();
+        factory('App\Entry', 5)->create();
+        $this->assertEquals(5, \App\Entry::all()->count());
     }
 }

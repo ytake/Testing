@@ -19,7 +19,7 @@ class LocalServiceProvider extends ServiceProvider
             /**
              * @see https://github.com/barryvdh/laravel-ide-helper
              */
-            $this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
     }
 }

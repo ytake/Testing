@@ -1,13 +1,13 @@
 <?php
-namespace App\Services;
+namespace App\Http\Controllers;
 
 use App\Repositories\UserRepositoryInterface;
 
 /**
- * Class UserService
- * @package App\Services
+ * Class UserController
+ * @package App\Http\Controllers
  */
-class UserService
+class UserController extends Controller
 {
 
     /** @var UserRepositoryInterface  */
@@ -22,11 +22,11 @@ class UserService
     }
 
     /**
-     * @return array
+     * @return \Illuminate\View\View
      */
-    public function getUsers()
+    public function index()
     {
-        return $this->user->all();
+        return view('user.index', ['users' => $this->user->all()]);
     }
 
 }
