@@ -20,7 +20,6 @@ checks:
     duplication: true
 build:
   environment:
-    node: false
     php:
       version: 5.6.9
   tests:

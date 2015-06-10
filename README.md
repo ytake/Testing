@@ -1,6 +1,8 @@
 # Testing
 with Vagrant/Homestead
 
+[![Build Status](https://travis-ci.org/ytake/Testing.svg?branch=develop)](https://travis-ci.org/ytake/Testing)  
+
 ## required
 vagrant, virtual box or vmware
 
