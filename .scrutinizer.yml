@@ -26,10 +26,7 @@ build:
   tests:
     override:
       -
-        commands:
-          - cd application
-          - composer install --prefer-source
-          - phpunit --coverage-clover=build/logs/clover.xml
+        command: ./application/vendor/bin/phpunit
         coverage:
-          file: build/logs/clover.xml
+          file: application/tests/build/clover.xml
           format: php-clover

@@ -10,5 +10,4 @@ script:
   - composer install --prefer-source
   - ./vendor/bin/phpunit
 after_script:
-  - cd application
   - php vendor/bin/coveralls -v
