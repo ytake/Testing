@@ -1,12 +1,9 @@
 filter:
   paths:
-    - application/
+    - app/
   excluded_paths:
-    - application/tests/*
-    - application/spec/*
-    - src/*
-    - scripts/*
-    - .homestead/*
+    - tests/*
+    - spec/*
 tools:
   external_code_coverage: false
   php_code_sniffer:
@@ -19,13 +16,10 @@ checks:
     code_rating: true
     duplication: true
 build:
-  environment:
-    php:
-      version: 5.6.9
   tests:
     override:
       -
-        command: ./application/vendor/bin/phpunit
+        command: 'php vendor/bin/phpunit --coverage-clover=tests/build/clover.xml'
         coverage:
-          file: application/tests/build/clover.xml
+          file: tests/build/clover.xml
           format: php-clover

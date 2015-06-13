@@ -1,4 +1,7 @@
 /vendor
-.vagrant
+/node_modules
+.env
 .idea
 composer.lock
+composer.phar
+

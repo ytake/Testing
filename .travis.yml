@@ -6,6 +6,7 @@ php:
 before_script:
   - composer self-update
 script:
-  - cd application
   - composer install --prefer-source
   - ./vendor/bin/phpunit
+after_script:
+  - php vendor/bin/coveralls -v
