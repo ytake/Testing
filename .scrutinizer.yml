@@ -16,7 +16,11 @@ checks:
     code_rating: true
     duplication: true
 build:
+  environment:
+    php: '5.6.9'
   tests:
+    before:
+      - 'npm cache clean'
     override:
       -
         command: 'php vendor/bin/phpunit --coverage-clover=tests/build/clover.xml'
