@@ -5,7 +5,9 @@ filter:
     - tests/*
     - spec/*
 tools:
-  external_code_coverage: false
+  external_code_coverage: true
+    timeout: 600
+    runs: 3
   php_code_sniffer:
     config:
       standard: "PSR2"
@@ -15,17 +17,3 @@ checks:
   php:
     code_rating: true
     duplication: true
-build:
-  dependencies:
-    before:
-      - sudo apt-get update
-      - 'npm cache clean'
-  environment:
-    php: '5.6.9'
-  tests:
-    override:
-      -
-        command: 'php vendor/bin/phpunit --coverage-clover=tests/build/clover.xml'
-        coverage:
-          file: tests/build/clover.xml
-          format: php-clover
