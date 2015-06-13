@@ -5,9 +5,8 @@ filter:
     - tests/*
     - spec/*
 tools:
-  external_code_coverage: true
-    timeout: 600
-    runs: 3
+    external_code_coverage:
+        timeout: 600
   php_code_sniffer:
     config:
       standard: "PSR2"
