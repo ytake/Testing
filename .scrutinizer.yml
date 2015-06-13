@@ -12,7 +12,7 @@ tools:
             standard: "PSR2"
     php_cs_fixer:
         config: { level: psr2 }
-    checks:
-        php:
-            code_rating: true
-            duplication: true
+checks:
+    php:
+        code_rating: true
+        duplication: true
