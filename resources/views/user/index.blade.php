@@ -1,5 +1,7 @@
+<ul>
 @forelse($users as $user)
     <li>{{ $user->name }}</li>
 @empty
-    <p>No users</p>
+    <li>No users</li>
 @endforelse
+</ul>

@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Repositories\UserRepositoryInterface;
+use Illuminate\Contracts\Hashing\Hasher;
 
 /**
  * Class UserController
@@ -10,7 +12,7 @@ use App\Repositories\UserRepositoryInterface;
 class UserController extends Controller
 {
 
-    /** @var UserRepositoryInterface  */
+    /** @var UserRepositoryInterface */
     protected $user;
 
     /**
@@ -27,6 +29,21 @@ class UserController extends Controller
     public function index()
     {
         return view('user.index', ['users' => $this->user->all()]);
+    }
+
+    /**
+     * @param UserRequest $request
+     * @param Hasher $hash
+     * @return \Illuminate\View\View
+     */
+    public function store(UserRequest $request, Hasher $hash)
+    {
+        $this->user->save([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $hash->make($request->password),
+        ]);
+        return view('user.store');
     }
 
 }

@@ -13,4 +13,10 @@ interface UserRepositoryInterface
      */
     public function all();
 
+    /**
+     * @param array $params
+     * @return mixed
+     */
+    public function save(array $params);
+
 }

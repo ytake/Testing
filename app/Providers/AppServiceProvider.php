@@ -31,5 +31,9 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\UserRepositoryInterface::class,
             \App\Repositories\UserRepository::class
         );
+        $this->app->bind(
+            \App\Infrastructures\Messageable::class,
+            \App\Infrastructures\LocalMessage::class
+        );
     }
 }

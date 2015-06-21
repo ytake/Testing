@@ -32,4 +32,9 @@ class StubUserRepository implements \App\Repositories\UserRepositoryInterface
             ->add($user);
     }
 
+    public function save(array $params)
+    {
+        return 1;
+    }
+
 }

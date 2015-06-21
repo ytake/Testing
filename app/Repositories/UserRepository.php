@@ -29,4 +29,13 @@ class UserRepository implements UserRepositoryInterface
         return $this->eloquent->all();
     }
 
+    /**
+     * @param array $params
+     * @return mixed
+     */
+    public function save(array $params)
+    {
+        $result = $this->eloquent->firstOrCreate($params);
+        return $result->id;
+    }
 }

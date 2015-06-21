@@ -1,0 +1,6 @@
+I WANT TO RETURN TO THIS PAGE
+
+I am on page 'tester'
+I click 'Link'
+I see 'Tester Example'
+
