@@ -12,11 +12,6 @@ script:
     - chmod -R 777 tests/build
     - ./vendor/bin/phpunit
     - ./vendor/bin/phpspec run -v
-    - touch storage/codeception.sqlite
-    - php artisan migrate --database=codeception
-    - php artisan serve
-    - ./vendor/bin/codecept build
-    - ./vendor/bin/codecept run --steps
 after_script:
     - php vendor/bin/coveralls -v
     - wget https://scrutinizer-ci.com/ocular.phar
