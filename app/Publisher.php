@@ -26,9 +26,13 @@ class Publisher
         return config('channel');
     }
 
-    public function broadcast()
+    /**
+     * @param array $params
+     */
+    public function broadcast(array $params = [])
     {
         $channel = $this->channel();
-        // broadcast処理
+        // 実装を記述します
+        $this->broadcast->driver()->broadcast([$channel], 'publisher', $params);
     }
 }

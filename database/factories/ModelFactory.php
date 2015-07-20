@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define('App\User', function ($faker) {
+$factory->define(\App\User::class, function ($faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -20,7 +20,7 @@ $factory->define('App\User', function ($faker) {
     ];
 });
 
-$factory->defineAs('App\User', 'guest', function ($faker) {
+$factory->defineAs(\App\User::class, 'guest', function ($faker) {
     return [
         'name' => 'guest',
         'email' => null,
@@ -30,7 +30,7 @@ $factory->defineAs('App\User', 'guest', function ($faker) {
 });
 
 
-$factory->define('App\Entry', function ($faker) {
+$factory->define(\App\Entry::class, function ($faker) {
     $faker = Faker\Factory::create('ja_JP');
     return [
         'title' => $faker->word,

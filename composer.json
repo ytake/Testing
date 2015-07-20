@@ -17,8 +17,9 @@
     "phpspec/phpspec": "~2.1",
     "barryvdh/laravel-ide-helper": "2.*",
     "doctrine/dbal": "~2.3",
+    "behat/behat": "~2.5",
     "satooshi/php-coveralls": "dev-master",
-    "codeception/codeception": "2.0.14"
+    "codeception/codeception": "*"
   },
   "autoload": {
     "classmap": [

@@ -27,7 +27,7 @@ class StubUserRepository implements \App\Repositories\UserRepositoryInterface
      */
     public function all()
     {
-        $user = factory('App\User')->make();
+        $user = factory(\App\User::class)->make();
         return (new \Illuminate\Database\Eloquent\Collection())
             ->add($user);
     }

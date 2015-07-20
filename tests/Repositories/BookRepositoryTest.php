@@ -38,7 +38,7 @@ class BookRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function 値の返却をテスト()
     {
-
+        // TODO
     }
 
     /**
@@ -47,6 +47,16 @@ class BookRepositoryTest extends \PHPUnit_Framework_TestCase
     public function testReturnBookException()
     {
         $this->repository->getReferenceBook();
+    }
+
+    /**
+     * @expectedException \Exception
+     */
+    public function testAddBookException()
+    {
+        $this->repository->setReferenceBook([]);
+        $this->repository->setReferenceBook(['id' => 1]);
+        $this->repository->setReferenceBook(['title' => 'testing']);
     }
 
     /**

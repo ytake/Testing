@@ -21,7 +21,7 @@ class UserServiceOneTest extends \TestCase
     public function testDatabaseDependencyUsers()
     {
         $this->runDatabaseMigrations();
-        factory('App\User')->create();
+        factory(\App\User::class)->create();
         $this->assertInstanceOf(Collection::class, $this->service->getUsers());
         // その他のテストコード
     }

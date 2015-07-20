@@ -42,7 +42,7 @@ class UserControllerTest extends \TestCase
      */
     public function testLoginUSerRequestForStore()
     {
-        $this->be(factory('App\User')->make());
+        $this->be(factory(\App\User::class)->make());
         $this->post('user', [])->assertRedirectedToRoute('user.index');
     }
 

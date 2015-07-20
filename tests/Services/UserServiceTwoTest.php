@@ -11,7 +11,7 @@ class UserServiceTwoTest extends \TestCase
     public function setUp()
     {
         parent::setUp();
-        $user = factory('App\User')->make();
+        $user = factory(\App\User::class)->make();
         // Eloquentを継承した\App\Userクラスをモックします
         $mock = Mockery::mock(new \App\User())->makePartial();
         $mock->shouldReceive('all')->andReturn(
