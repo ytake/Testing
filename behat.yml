@@ -1,0 +1,17 @@
+default:
+    suites:
+        basic:
+            paths: [ %paths.base%/features/basic ]
+            contexts:
+                - FeatureContext
+        laravel_basic:
+            paths: [ %paths.base%/features/laravel ]
+            contexts:
+                - LaravelContext
+    extensions:
+        Laracasts\Behat:
+            env_path: .env
+        Behat\MinkExtension:
+            default_session: laravel
+            laravel: ~
+            base_url: http://localhost/

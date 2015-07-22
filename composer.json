@@ -17,7 +17,10 @@
     "phpspec/phpspec": "~2.1",
     "barryvdh/laravel-ide-helper": "2.*",
     "doctrine/dbal": "~2.3",
-    "behat/behat": "~2.5",
+    "behat/behat": "~3.0",
+    "laracasts/behat-laravel-extension": "*",
+    "behat/mink": "*",
+    "behat/mink-extension": "*",
     "satooshi/php-coveralls": "dev-master",
     "codeception/codeception": "*"
   },

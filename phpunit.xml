@@ -20,16 +20,22 @@
             <exclude>
                 <directory>./app/Providers</directory>
                 <directory suffix="Interface.php">./app</directory>
+                <!--
+                    デフォルトで用意されているクラスや、
+                    phpspec、behatなどでテストしているクラスを除外しています
+                -->
                 <file>./app/Http/Requests/Request.php</file>
                 <file>./app/Http/Kernel.php</file>
                 <file>./app/Http/Controllers/Controller.php</file>
                 <file>./app/Http/Controllers/TesterController.php</file>
+                <file>./app/Http/Controllers/BehatController.php</file>
                 <file>./app/Commands/Command.php</file>
                 <file>./app/Events/Event.php</file>
+                <file>./app/Exceptions/Handler.php</file>
                 <file>./app/Repositories/EntryRepository.php</file>
-                <file>./app/Middleware/Authenticate.php</file>
-                <file>./app/Middleware/RedirectIfAuthenticated.php</file>
-                <file>./app/Middleware/VerifyCsrfToken.php</file>
+                <file>./app/Http/Middleware/Authenticate.php</file>
+                <file>./app/Http/Middleware/RedirectIfAuthenticated.php</file>
+                <file>./app/Http/Middleware/VerifyCsrfToken.php</file>
             </exclude>
         </whitelist>
     </filter>

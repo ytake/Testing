@@ -10,3 +10,5 @@
         'getFunctional' => 'tester.functional'
     ]
 );
+// behatテストサンプルに利用しているコントローラです
+\Route::controller('behat', 'BehatController');
